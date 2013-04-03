@@ -201,7 +201,7 @@ font_t *_fontCreate(workbook *w, C_TEXT &name, C_LONGINT &index){
 		
 		std::string n = std::string((char *)s.c_str());	
 		
-		if(CGlobalRecords::IsASCII(n)){
+	//	if(CGlobalRecords::IsASCII(n)){
 			
 			unsigned int i = 1;
 			
@@ -218,7 +218,7 @@ font_t *_fontCreate(workbook *w, C_TEXT &name, C_LONGINT &index){
 				
 			}
 			
-		}
+	//	}
 	
 	}
 	
@@ -1761,11 +1761,11 @@ void XLS_CELL_SET_FONT_NAME(sLONG_PTR *pResult, PackagePtr pParams)
 		
 		std::string name = std::string((char *)s.c_str());
 		
-		if(CGlobalRecords::IsASCII(name)){
+	//	if(CGlobalRecords::IsASCII(name)){
 		
 			c->fontname(name);
 			
-		}
+	//	}
 		
 	}	
 
@@ -2117,11 +2117,11 @@ void XLS_RANGE_SET_FONT_NAME(sLONG_PTR *pResult, PackagePtr pParams)
 		Param2.copyUTF8String(&s);
 		std::string name = std::string((char *)s.c_str());	
 		
-		if(CGlobalRecords::IsASCII(name)){
+	//	if(CGlobalRecords::IsASCII(name)){
 		
 			r->fontname(name);
 			
-		}
+	//	}
 
 	}
 
@@ -2326,11 +2326,11 @@ void XLS_FONT_SET_NAME(sLONG_PTR *pResult, PackagePtr pParams)
 		
 		std::string name = std::string((char *)s.c_str());	
 		
-		if(CGlobalRecords::IsASCII(name)){
+	//	if(CGlobalRecords::IsASCII(name)){
 		
 			f->SetName(name);	
 			
-		}
+	//	}
 		
 	}	
 
