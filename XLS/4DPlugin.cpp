@@ -1242,7 +1242,12 @@ void XLS_WORKSHEET_Set_cell_real(sLONG_PTR *pResult, PackagePtr pParams)
 		c = s->number(Param2.getIntValue(), 
 					  Param3.getIntValue(),	
 					  Param5.getDoubleValue(), 
-					  (xlslib_core::format_number_t)Param6.getIntValue(), f);		
+					  f);	
+		
+		if(Param6.getIntValue())
+		{
+			c->format((format_number_t)Param6.getIntValue());
+		}
 		
 		_cellMap(c, returnValue);
 		
@@ -1530,9 +1535,10 @@ void XLS_CELL_SET_FONT(sLONG_PTR *pResult, PackagePtr pParams)
 	Param2.fromParamAtIndex(pParams, 2);
 
 	cell_t *c = _cellGet(Param1);
+	font_t *font = _fontGet(Param2);
 	
-	if(c){
-		c->fontheight(Param2.getIntValue());
+	if((c) && (font)){
+		c->font(font);
 	}
 
 }
