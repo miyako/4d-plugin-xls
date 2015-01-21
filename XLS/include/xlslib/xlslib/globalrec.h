@@ -4,7 +4,7 @@
  * for dynamic generation of Excel(TM) files.
  *
  * Copyright 2004 Yeico S. A. de C. V. All Rights Reserved.
- * Copyright 2008-2011 David Hoerl All Rights Reserved.
+ * Copyright 2008-2013 David Hoerl All Rights Reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification, are
  * permitted provided that the following conditions are met:
@@ -73,24 +73,31 @@ namespace xlslib_core
 		GLOBAL_STYLES,
 		GLOBAL_PALETTE,
 		GLOBAL_BOUNDSHEETS,
+        GLOBAL_LINK1,
+        GLOBAL_LINK2,
+		GLOBAL_DRAWING_GRP,
 		GLOBAL_SST,
 		GLOBAL_EOF,
 		GLOBAL_FINISH
 	} GlobalRecordDumpState_t;
 
-	class __EXPORT__ CGlobalRecords : public CBiffSection
+	class CGlobalRecords : public CBiffSection
 	{
+		friend class cell_t;
+
+		static const unsigned32_t startingSPID = 24;	// the first drawing ID for this sheet.
+
 	public:
 		CGlobalRecords();
 		~CGlobalRecords();
 //      static		CGlobalRecords& Instance();
 //      static void	Clean();
-#if HAVE_ICONV
+#if defined(HAVE_WORKING_ICONV)
 		void		  SetIconvCode(const std::string& code){iconv_code=code; }
 #endif
 		void		  AddBoundingSheet(unsigned32_t streampos,
 									   unsigned16_t attributes,
-									   u16string& sheetname
+									   xlslib_strings::u16string& sheetname
 									   );
 		void		  AddBoundingSheet(boundsheet_t* bsheetdef);
 		void		  AddFont(font_t* newfont);
@@ -99,7 +106,8 @@ namespace xlslib_core
 		void		  AddLabelSST(const label_t& label);
 		size_t		  GetLabelSSTIndex(const label_t& labeldef);
 		void		  DeleteLabelSST(const label_t& label);
-
+		
+		void		  BumpNoteCount(unsigned32_t sheet_idx);
 		bool		  SetColor(unsigned8_t r, unsigned8_t g, unsigned8_t b, unsigned8_t idx);
 
 		void		  GetBoundingSheets(Boundsheet_Vect_Itor_t &bs);
@@ -121,16 +129,25 @@ namespace xlslib_core
 		size_t		  EstimateNumBiffUnitsNeeded4Header(void);
 
 
-		void wide2str16(const std::ustring& str1, u16string& str2);
-		void char2str16(const std::string& str1, u16string& str2);
-		void str16toascii(const u16string& str1, std::string& str2);
+		void wide2str16(const xlslib_strings::ustring& str1, xlslib_strings::u16string& str2);
+		void char2str16(const std::string& str1, xlslib_strings::u16string& str2);
+		void str16toascii(const xlslib_strings::u16string& str1, std::string& str2);
 
 		static bool IsASCII(const std::string& str);
-		static bool IsASCII(const u16string& str);
+		static bool IsASCII(const xlslib_strings::u16string& str);
 
+		static unsigned32_t		GetStartingSPID(void) { return startingSPID; }
+		static unsigned32_t		MakeSPID(unsigned32_t sheet_idx, unsigned32_t item) {
+																						unsigned32_t val = (sheet_idx+1) * 1000;
+																						val += startingSPID + item;
+																						return val;
+																					}
 	private:
 		CGlobalRecords(const CGlobalRecords& that);
 		CGlobalRecords& operator=(const CGlobalRecords& right);
+
+	protected:
+		xf_t* findXF(xf_t *);
 
 	private:
 		Font_Vect_t	m_Fonts;
@@ -146,7 +163,7 @@ namespace xlslib_core
 
 		xf_t *defaultXF;         // 15th xfFormat is the default cell format
 
-#ifdef HAVE_ICONV
+#ifdef HAVE_WORKING_ICONV
 		std::string	iconv_code;
 #endif
 		// State Machine variable

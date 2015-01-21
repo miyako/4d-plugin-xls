@@ -11,6 +11,12 @@
 
 #include "4DPluginAPI.h"
 
+#if VERSIONMAC
+#import <CoreFoundation/CoreFoundation.h>
+#import <Cocoa/Cocoa.h>
+#import <AppKit/AppKit.h>
+#endif
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -47,6 +53,8 @@ extern "C" {
 		void convertPath();
 		void setPath(NSString* path);		
 		NSURL *copyUrl();
+		NSString* copyUrlString();
+		NSString* copyPathString();		
 #endif
 #endif
 		

@@ -60,7 +60,6 @@ namespace xlslib_core
 
 
 		int Open(const std::string& name);
-		int Open(const std::wstring& file_name);
 		int Close(void);
 		int Write(unsigned8_t * data, size_t size);
 		int Write(CUnit& data_unit);

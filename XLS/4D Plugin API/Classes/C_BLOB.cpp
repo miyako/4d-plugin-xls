@@ -145,7 +145,7 @@ void CBytes::fromHexText(C_TEXT *hex)
 			break;
 		} 
 		
-		if((f >= 0) && (f <= 15)){
+		if(f <= 15){
 			
 			if(data_in_buffer){
 				this->_CBytes.push_back(static_cast<uint8_t>((buf << 4) + f));

@@ -59,8 +59,11 @@ void C_TEXT::setUTF16String(NSString* pString)
 	uint32_t size = (len * sizeof(PA_Unichar)) + sizeof(PA_Unichar);
 	std::vector<uint8_t> buf(size);	
 	
-	if([pString getCString:(char *)&buf[0] maxLength:size encoding:NSUnicodeStringEncoding])
+    if([pString getCString:(char *)&buf[0] maxLength:size encoding:NSUnicodeStringEncoding]){
 		this->setUTF16String((const PA_Unichar *)&buf[0], len);	
+    }else{
+        this->setUTF16String(@"");	
+    }
 }
 
 NSMutableString* C_TEXT::copyUTF16MutableString()
@@ -104,6 +107,35 @@ NSURL *C_TEXT::copyUrl()
 	[str release];
 	
 	return u;
+}
+
+NSString* C_TEXT::copyUrlString()
+{
+	NSString *url = @"";
+	
+	NSURL *u = this->copyUrl();
+	if(u){
+		url = [[NSString alloc]initWithString:[u absoluteString]];
+		[u release];
+	}
+	
+	return url;
+}
+
+NSString* C_TEXT::copyPathString()
+{
+	NSString *path = @"";
+	
+	NSString *u = this->copyUTF16String();
+	NSURL *url = [[NSURL alloc]initWithString:u];
+	[u release];
+
+	if(url){
+		path = (NSString *)CFURLCopyFileSystemPath((CFURLRef)url, kCFURLHFSPathStyle);
+		[url release];
+	}
+	
+	return path;
 }
 
 void C_TEXT::setPath(NSString* path)

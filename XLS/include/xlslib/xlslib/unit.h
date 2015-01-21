@@ -4,7 +4,7 @@
  * for dynamic generation of Excel(TM) files.
  *
  * Copyright 2004 Yeico S. A. de C. V. All Rights Reserved.
- * Copyright 2008-2011 David Hoerl All Rights Reserved.
+ * Copyright 2008-2013 David Hoerl All Rights Reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification, are
  * permitted provided that the following conditions are met:
@@ -117,14 +117,13 @@ namespace xlslib_core
 		enum XlsUnicodeStringFormat_t
 		{
 			LEN2_FLAGS_UNICODE=1,			// RECTYPE_FORMAT, RECTYPE_LABEL
-			LEN2_NOFLAGS_PADDING_UNICODE,	// RECTYPE_NOTE (RECTYPE_TXO)
 			LEN1_FLAGS_UNICODE,				// RECTYPE_BOUNDSHEET
-			NOLEN_FLAGS_UNICODE,			// RECTYPE_NAME
+			NOLEN_FLAGS_UNICODE				// RECTYPE_NAME
 		};
 
 		signed8_t AddUnicodeString(CGlobalRecords& gRecords, const std::string& str, XlsUnicodeStringFormat_t fmt /* = LEN2_FLAGS_UNICODE */ );
-		signed8_t AddUnicodeString(const u16string& newdata, XlsUnicodeStringFormat_t fmt /* = LEN2_FLAGS_UNICODE */ );
-		size_t UnicodeStringLength(const u16string& str16, size_t& strLen, bool& isAscii, XlsUnicodeStringFormat_t fmt /* = LEN2_FLAGS_UNICODE */ );
+		signed8_t AddUnicodeString(const xlslib_strings::u16string& newdata, XlsUnicodeStringFormat_t fmt /* = LEN2_FLAGS_UNICODE */ );
+		size_t UnicodeStringLength(const xlslib_strings::u16string& str16, size_t& strLen, bool& isAscii, XlsUnicodeStringFormat_t fmt /* = LEN2_FLAGS_UNICODE */ );
 
 		signed8_t GetValue16From(unsigned16_t* val, unsigned32_t index) const;
 		signed8_t GetValue32From(unsigned32_t* val, unsigned32_t index) const;
@@ -144,6 +143,8 @@ namespace xlslib_core
 
 		signed8_t SetArrayAt(const unsigned8_t* newdata, size_t size, unsigned32_t index);
 		// signed8_t GetData(unsigned8_t** data, unsigned32_t from, unsigned32_t to );
+
+		static unsigned64_t EncodeFP2I64(double newval);
 
 	public:
 		signed8_t Inflate(size_t newsize);

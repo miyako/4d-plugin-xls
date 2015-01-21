@@ -73,7 +73,8 @@ void C_POINTER::getVariable(PA_Variable *variable)
 		case ePK_PointerToVariable:	
 			
 			v = PA_GetPointerValue(this->_ptr);
-			
+			//should Call PA_ClearVariable to clear the returned PA_Variable.
+			//see 4DPluginAPI.h
 			variable->fType		= v.fType;
 			variable->fFiller	= 1;
 			variable->uValue.fVariableDefinition.fTag = v.uValue.fVariableDefinition.fTag;
