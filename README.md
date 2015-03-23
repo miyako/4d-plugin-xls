@@ -1,7 +1,7 @@
 4d-plugin-xls
 =============
 
-4D plugin to export BIFF8 (XLS) spreadsheets.
+4D plugin to export BIFF8 (XLS) spreadsheets. (xlslib-2.3.4)
 
 About
 -----
