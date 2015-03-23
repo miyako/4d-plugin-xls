@@ -3,6 +3,8 @@
 
 4D plugin to export BIFF8 (XLS) spreadsheets. (xlslib-2.3.4)
 
+For reading cell values, you might want to consider [this](https://github.com/miyako/4d-plugin-free-xl).
+
 About
 -----
 v14 is for v14 and above, 32/64 bits for both platforms. (Mac requires 10.8+).
