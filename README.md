@@ -1,7 +1,7 @@
 4d-plugin-xls
 =============
 
-4D plugin to export BIFF8 (XLS) spreadsheets. (xlslib-2.3.4)
+4D plugin to write XLS documents. [xlslib-2.3.4](http://xlslib.sourceforge.net/).
 
 For reading cell values, you might want to consider [this](https://github.com/miyako/4d-plugin-free-xl).
 
