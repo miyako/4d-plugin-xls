@@ -110,6 +110,7 @@ void CBytes::toHexText(C_TEXT *hex)
 	const std::vector<uint8_t>::const_iterator binend = this->_CBytes.end();
 	
 	for (std::vector<uint8_t>::const_iterator i = this->_CBytes.begin(); i != binend; ++i) {
+        PA_YieldAbsolute();
 #if VERSIONMAC
 		sprintf((char *)&buf[0], "%02x", *i);
 #else
@@ -137,7 +138,7 @@ void CBytes::fromHexText(C_TEXT *hex)
 	this->_CBytes.resize(0);
 	
 	for(pos = 0; pos < t.length(); pos++){
-		
+		PA_YieldAbsolute();
 		size_t f = v.find(t[pos]);
 		
 		if(f == std::string::npos){
@@ -199,6 +200,7 @@ void CBytes::fromB64Text(C_TEXT *b64)
 	unsigned int accumulator = 0;
 	
 	for (CUTF8String::const_iterator i = t.begin(); i != last; ++i) {
+        PA_YieldAbsolute();
 		const int c = *i;
 		if (isspace(c) || c == '=') {
 			// Skip whitespace and padding. Be liberal in what you accept.
@@ -237,6 +239,7 @@ void CBytes::toB64Text(C_TEXT *b64)
 	const std::vector<uint8_t>::const_iterator binend = this->_CBytes.end();
 	
 	for (std::vector<uint8_t>::const_iterator i = this->_CBytes.begin(); i != binend; ++i) {
+        PA_YieldAbsolute();
 		accumulator = (accumulator << 8) | (*i & 0xffu);
 		bits_collected += 8;
 		while (bits_collected >= 6) {

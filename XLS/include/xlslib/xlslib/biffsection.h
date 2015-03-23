@@ -43,7 +43,7 @@
 
 namespace xlslib_core
 {
-	class CBiffSection
+	class __EXPORT__ CBiffSection
 	{
 	protected:
 

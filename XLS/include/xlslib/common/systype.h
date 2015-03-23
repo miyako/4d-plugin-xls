@@ -43,7 +43,7 @@
 
 // Global includes
 #include <stdio.h>
-#ifdef HAVE_STDINT_H
+#ifdef HAVE_STDINT_H	// DONT_HAVE_STDINT_H
 #include <stdint.h>
 #endif
 #ifdef HAVE_INTTYPES_H
@@ -55,12 +55,7 @@
 #endif
 #ifdef HAVE_STRING_H
 #include <string.h>	
-#endif
-#ifdef HAVE_MALLOC_H
-#include <malloc.h>	
-#endif
-#ifdef HAVE_MEMORY_H
-#include <memory.h>	
+// DFH 10-2-08
 #endif
 #if defined(__cplusplus)					// ALL C++ users
 #include <iostream>
@@ -270,12 +265,6 @@ that code like this will compile as expected in all conditions:
     do_something();
 
 */
-#define XL_ASSERTS(str)																	\
-	do																					\
-	{																					\
-		xlslib_report_failed_assertion(#str, __FILE__, __LINE__, XL_FUNCNAME());		\
-	}  while (0)
-
 #define XL_ASSERT(expr)																	\
 	do																					\
 	{																					\

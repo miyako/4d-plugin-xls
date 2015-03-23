@@ -4,7 +4,7 @@
  * for dynamic generation of Excel(TM) files.
  *
  * Copyright 2004 Yeico S. A. de C. V. All Rights Reserved.
- * Copyright 2008-2013 David Hoerl All Rights Reserved.
+ * Copyright 2008-2011 David Hoerl All Rights Reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification, are
  * permitted provided that the following conditions are met:
@@ -45,16 +45,14 @@ namespace xlslib_core
 	 *  worksheet class declaration
 	 ***********************************
 	 */
-	class cell_t;
-	class note_t;
-	class range;
+	class __EXPORT__ cell_t;
+	class __EXPORT__ range;
 	typedef std::vector<xlslib_core::range* XLSLIB_DFLT_ALLOCATOR> RangeObj_Vect_t;
 	typedef RangeObj_Vect_t::iterator RangeObj_Vect_Itor_t;
-	class range_t;
+	class __EXPORT__ range_t;
 	typedef std::vector<xlslib_core::range_t* XLSLIB_DFLT_ALLOCATOR> Range_Vect_t;
 
-	class expression_node_t;
-	class formula_t;
+	class __EXPORT__ expression_node_t;
 
 	typedef enum
 	{
@@ -66,14 +64,9 @@ namespace xlslib_core
 		SHEET_DFLT_COL_WIDTH,
 		SHEET_DIMENSION,
 		SHEET_ROWBLOCKS,
-		SHEET_DRAWINGS,
-		SHEET_NOTES,
 		SHEET_MERGED,
 		SHEET_WINDOW2,
-		SHEET_PANE,
 		SHEET_H_LINKS,
-		SHEET_VALIDITY_HEADER,
-		SHEET_VALIDITY_BODY,
 		SHEET_EOF,
 		SHEET_FINISH
 	} SheetRecordDumpState_t;
@@ -135,66 +128,12 @@ namespace xlslib_core
 	typedef std::vector<size_t XLSLIB_DFLT_ALLOCATOR> CellOffsets_Vect_t;
 	typedef CellOffsets_Vect_t::iterator CellOffsets_Vect_Itor_t;
 
-    enum {
-        DVAL_TYPE_ANY = 0x00,
-        DVAL_TYPE_INTEGER = 0x01,
-        DVAL_TYPE_DECIMAL = 0x02,
-        DVAL_TYPE_LIST = 0x03,
-        DVAL_TYPE_DATE = 0x04,
-        DVAL_TYPE_TIME = 0x05,
-        DVAL_TYPE_LENGTH = 0x06,
-        DVAL_TYPE_FORMULA = 0x07
-    };
-
-    enum {
-        DVAL_ERROR_STOP = 0x00,
-        DVAL_ERROR_WARNING = 0x10,
-        DVAL_ERROR_INFO = 0x20,
-    };
-
-    enum {
-        DVAL_STRING_LIST_IN_FORMULA = 0x0080,
-        DVAL_EMPTY_OK = 0x0100,
-        DVAL_STRING_LIST_SUPPRESS_DROPDOWN = 0x0200,
-        DVAL_SHOW_PROMPT_IF_SELECTED = 0x040000,
-        DVAL_SHOW_ERROR_IF_INVALID   = 0x080000
-    };
-
-    enum {
-        DVAL_OP_BETWEEN          = 0x000000,
-        DVAL_OP_NOT_BETWEEN      = 0x100000,
-        DVAL_OP_EQUAL            = 0x200000,
-        DVAL_OP_NOT_EQUAL        = 0x300000,
-        DVAL_OP_GREATER_THAN     = 0x400000,
-        DVAL_OP_LESS_THAN        = 0x500000,
-        DVAL_OP_GREATER_OR_EQUAL = 0x600000,
-        DVAL_OP_LESS_OR_EQUAL    = 0x700000,
-    };
-
-	struct DataValidation
-	{
-        unsigned32_t				first_row;
-        unsigned32_t				last_row;
-        unsigned32_t				first_col;
-        unsigned32_t				last_col;
-		unsigned32_t				options;
-		xlslib_strings::u16string	prompt_title;
-		xlslib_strings::u16string	prompt_text;
-		xlslib_strings::u16string	error_title;
-		xlslib_strings::u16string	error_text;
-        const formula_t				*cond1;
-        const formula_t				*cond2;
-	};
-
-	typedef std::vector<xlslib_core::DataValidation * XLSLIB_DFLT_ALLOCATOR> DataValidationList_t;
-	typedef DataValidationList_t::iterator DataValidationList_Itor_t;
-
 	struct HyperLink
 	{
 		unsigned16_t row;
 		unsigned16_t col;
-		xlslib_strings::u16string url;
-		xlslib_strings::u16string mark;
+		u16string url;
+		u16string mark;
 	};
 	typedef std::vector<xlslib_core::HyperLink * XLSLIB_DFLT_ALLOCATOR> HyperLinkList_t;
 	typedef HyperLinkList_t::iterator HyperLinkList_Itor_t;
@@ -202,20 +141,16 @@ namespace xlslib_core
 	typedef std::vector<xlslib_core::CUnit* XLSLIB_DFLT_ALLOCATOR> ColInfo_t;
 	typedef ColInfo_t::iterator ColInfo_Itor_t;
 
-	typedef std::vector<xlslib_core::formula_t * XLSLIB_DFLT_ALLOCATOR> FormulaStackList_t;
-	typedef FormulaStackList_t::iterator FormulaStackList_Itor_t;
-
-	class worksheet : public CBiffSection
+	class __EXPORT__ worksheet : public CBiffSection
 	{
 		friend class workbook;
 
 	private:
-		CGlobalRecords& m_GlobalRecords;
+		CGlobalRecords&			m_GlobalRecords;
 		SheetRecordDumpState_t m_DumpState;
-		CUnit* m_pCurrentData;
+		CUnit*					m_pCurrentData;
 
 		Range_Vect_t m_MergedRanges;
-		Range_Vect_Itor_t m_Current_Range;
 
 		Colinfo_Set_t m_Colinfos;
 		Colinfo_Set_Itor_t m_Current_Colinfo;
@@ -225,16 +160,11 @@ namespace xlslib_core
 
 		unsigned32_t minRow, minCol, maxRow, maxCol;
 		unsigned16_t sheetIndex;
-		unsigned32_t currentSPIDidx;
 
 		Cell_Set_t m_Cells;
 		Cell_Set_Itor_t	m_CurrentCell;              // Init this one in the RowBlocksDump INIT state
 		Cell_Set_Itor_t	m_CurrentSizeCell;          // Init this one in the INIT state
 		//bool m_CellsSorted;
-		
-		Cell_Set_t m_Notes;
-		Cell_Set_Itor_t	m_CurrentNote;              // Init this one in the RowBlocksDump INIT state
-		unsigned16_t m_CurrentNoteIdx;
 
 		RangeObj_Vect_t	m_Ranges;
 		RBSize_Vect_t m_RBSizes;
@@ -252,21 +182,11 @@ namespace xlslib_core
 
 		// cache a bit for speedups
 		Cell_Set_Itor_t	cellIterHint;
-		cell_t* cellHint;
-		Cell_Set_Itor_t	noteIterHint;
-		cell_t* noteHint;
+		cell_t*					cellHint;
 
 		bool defRowsHidden;
 		unsigned16_t defRowHeight;
 		unsigned16_t defColWidth;
-
-        unsigned16_t rowSplit;
-        unsigned16_t colSplit;
-
-        FormulaStackList_t m_FormulaStacks;
-
-        DataValidationList_t m_DataValidations;
-        DataValidationList_Itor_t m_CurrentDval;
 
 		HyperLinkList_t	m_HyperLinks;
 		HyperLinkList_Itor_t m_CurrentHlink;
@@ -282,11 +202,8 @@ namespace xlslib_core
 		size_t					EstimateNumBiffUnitsNeeded(void);
 
 		void					AddCell(cell_t* pcell);
-		void					AddNote(cell_t* pcell);
 		CUnit*					DumpData(CDataStorage &datastore, size_t offset, size_t writeLen /*, size_t &Last_BOF_offset*/);
 
-		CUnit*					MakeDataValidationHeader(CDataStorage& datastore, unsigned32_t dval_count);
-		CUnit*					MakeDataValidationEntry(CDataStorage& datastore, DataValidation* dval);
 		CUnit*					MakeHyperLink(CDataStorage& datastore, HyperLink* link);
 
 	private:
@@ -296,31 +213,20 @@ namespace xlslib_core
 	public:
 		void					MakeActive();   // makes this sheet come up first
 		size_t					NumCells() const { return m_Cells.size(); }
-		unsigned16_t            GetIndex() const { return sheetIndex; }
 
 		cell_t*					FindCell(unsigned32_t row, unsigned32_t col) const;
 		cell_t*					FindCellOrMakeBlank(unsigned32_t row, unsigned32_t col);
 
 		void					GetFirstLastRowsAndColumns(unsigned32_t* first_row, unsigned32_t* last_row, unsigned32_t* first_col, unsigned32_t* last_col); /* [i_a] */
-		void 					SplitWindow(unsigned16_t height, unsigned16_t width) { rowSplit = height; colSplit = width; }
 
-#if 0
-		static unsigned32_t		MakeSPID(unsigned32_t sheet_idx, unsigned32_t item) {
-																						unsigned32_t val = (sheet_idx+1) * 1000;
-																						val += startingSPID + item;
-																						return val;
-																					}
-#endif
 		// Cell operations
 		void merge(unsigned32_t first_row, unsigned32_t first_col,
 				   unsigned32_t last_row, unsigned32_t last_col);
-		void colwidth(unsigned32_t col, unsigned16_t width, xf_t* pxformat = NULL);				// sets column widths to 1/256 x width of "0"
-		void rowheight(unsigned32_t row, unsigned16_t heightInTwips, xf_t* pxformat = NULL);	// twips
+		void colwidth(unsigned32_t col, unsigned16_t width, xf_t* pxformat = NULL);         // sets column widths to 1/256 x width of "0"
+		void rowheight(unsigned32_t row, unsigned16_t height, xf_t* pxformat = NULL);       // in points (Excel uses twips, 1/20th of a point, but xlslib didn't)
 
 		void defaultRowHeight(unsigned16_t width, bool hidden = false) { defRowHeight = width; defRowsHidden = hidden; } // sets column widths to 1/256 x width of "0"
 		void defaultColwidth(unsigned16_t width) { defColWidth = width; } // in points (Excel uses twips, 1/20th of a point, but xlslib didn't)
-
-        formula_t* formula_data();
 
 		// Ranges
 		range* rangegroup(unsigned32_t row1, unsigned32_t col1,
@@ -332,7 +238,7 @@ namespace xlslib_core
 		cell_t* label(unsigned32_t row, unsigned32_t col,
 					  const std::string& strlabel, xf_t* pxformat = NULL);
 		cell_t* label(unsigned32_t row, unsigned32_t col,
-					  const xlslib_strings::ustring& strlabel, xf_t* pxformat = NULL);
+					  const std::ustring& strlabel, xf_t* pxformat = NULL);
 
 		cell_t* number(unsigned32_t row, unsigned32_t col,
 					   double numval, format_number_t fmtval, xf_t* pxformat);  // Deprecated
@@ -350,33 +256,18 @@ namespace xlslib_core
 		cell_t* error(unsigned32_t row, unsigned32_t col,
 					  errcode_t errorcode, xf_t* pxformat = NULL);
 
-		note_t* note(unsigned32_t row, unsigned32_t col,
-					 const std::string& author, const std::string& remark, xf_t* pxformat = NULL);
-		note_t* note(unsigned32_t row, unsigned32_t col,
-					const xlslib_strings::ustring& author,  const xlslib_strings::ustring& remark, xf_t* pxformat = NULL);
+		cell_t* note(unsigned32_t row, unsigned32_t col,
+					 const std::string& remark, const std::string& author, xf_t* pxformat = NULL);
+		cell_t* note(unsigned32_t row, unsigned32_t col,
+					 const std::ustring& remark, const std::ustring& author, xf_t* pxformat = NULL);
 
-		cell_t* formula(unsigned32_t row, unsigned32_t col,
-						bool array_formula,
-						expression_node_t* expression_root, bool auto_destruct_expression_tree = false,
-						xf_t* pxformat = NULL);
 		cell_t* formula(unsigned32_t row, unsigned32_t col,
 						expression_node_t* expression_root, bool auto_destruct_expression_tree = false,
 						xf_t* pxformat = NULL);
-		cell_t* formula(unsigned32_t row, unsigned32_t col,
-						formula_t *formula, bool array_formula, xf_t* pxformat);
-
-        void validate(const range_t *crange, unsigned32_t options,
-                const formula_t *cond1 = NULL, const formula_t *cond2 = NULL,
-                const std::string& promptTitle = std::string(), const std::string& promptText = std::string(),
-                const std::string& errorTitle = std::string(), const std::string& errorText = std::string());
-        void validate(const range_t *crange, unsigned32_t options,
-                const formula_t *cond1 = NULL, const formula_t *cond2 = NULL,
-                const xlslib_strings::ustring& promptTitle = xlslib_strings::ustring(), const xlslib_strings::ustring& promptText = xlslib_strings::ustring(),
-                const xlslib_strings::ustring& errorTitle = xlslib_strings::ustring(), const xlslib_strings::ustring& errorText = xlslib_strings::ustring());
 
 		// define a cell (label, number, etc) - apply proper url (http://blah.blah), possible text mark too (minus the '#')
 		void hyperLink(const cell_t *cell, const std::string& url, const std::string& mark = std::string());
-		void hyperLink(const cell_t *cell, const xlslib_strings::ustring& url, const xlslib_strings::ustring& mark = xlslib_strings::ustring());
+		void hyperLink(const cell_t *cell, const std::ustring& url, const std::ustring& mark = std::ustring());
 	};
 
 	typedef std::vector<xlslib_core::worksheet*> Sheets_Vector_t;

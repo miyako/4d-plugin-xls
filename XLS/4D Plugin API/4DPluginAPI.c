@@ -5536,6 +5536,32 @@ PA_long32 PA_CountTotalProcess()
 }
 
 
+void PA_GetProcessInfo( PA_long32 process, C_TEXT &name, PA_long32* state, PA_long32* time )
+{
+    EngineBlock eb;
+    
+    eb.fParam1 = process;
+    eb.fString[0] = 0;
+    eb.fParam2 = 0;
+    eb.fParam3 = 0;
+    eb.fError  = 0;
+    
+    Call4D( EX_GET_PROCESS_INFO, &eb );
+    sErrorCode = (PA_ErrorCode) eb.fError;
+    
+    if ( sErrorCode == eER_NoErr )
+    {
+        name.setUTF16String(eb.fUString, sizeof(eb.fUString) / sizeof(PA_Unichar));
+        
+        if ( state )
+            *state = (PA_long32)eb.fParam2;
+        
+        if ( time )
+            *time = (PA_long32)eb.fParam3;
+    }
+}
+
+
 void PA_GetProcessInfo( PA_long32 process, PA_Unichar* name, PA_long32* state, PA_long32* time )
 {
 	EngineBlock eb;

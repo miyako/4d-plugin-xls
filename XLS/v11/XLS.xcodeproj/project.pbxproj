@@ -15,6 +15,8 @@
 		18B684FB06944F2000CC6A1E /* PublicTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 18B684F406944F2000CC6A1E /* PublicTypes.h */; };
 		18B685230694531300CC6A1E /* 4DPlugin.rsrc in Rez */ = {isa = PBXBuildFile; fileRef = 18B685220694531300CC6A1E /* 4DPlugin.rsrc */; };
 		8D01CCCE0486CAD60068D4B7 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EA7FFBFE8413EDC02AAC07 /* Carbon.framework */; };
+		D11FC35E1ABFDCE000BD1560 /* libiconv.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D11FC35C1ABFDCE000BD1560 /* libiconv.2.dylib */; };
+		D11FC35F1ABFDCE000BD1560 /* libxls.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D11FC35D1ABFDCE000BD1560 /* libxls.2.dylib */; };
 		D130064F12F02D9700702C0E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D130064E12F02D9700702C0E /* Cocoa.framework */; };
 		D14D83BA1A0E5C0F00AEAB07 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D14D83B61A0E5C0F00AEAB07 /* InfoPlist.strings */; };
 		D14D83BD1A0E5CC600AEAB07 /* 4D Plugin_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = D14D83BC1A0E5CC600AEAB07 /* 4D Plugin_Prefix.pch */; };
@@ -50,8 +52,6 @@
 		D14D83FD1A0E5EBF00AEAB07 /* ARRAY_REAL.h in Headers */ = {isa = PBXBuildFile; fileRef = D14D83F11A0E5EBF00AEAB07 /* ARRAY_REAL.h */; };
 		D14D83FE1A0E5EBF00AEAB07 /* ARRAY_TEXT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D14D83F21A0E5EBF00AEAB07 /* ARRAY_TEXT.cpp */; };
 		D14D83FF1A0E5EBF00AEAB07 /* ARRAY_TEXT.h in Headers */ = {isa = PBXBuildFile; fileRef = D14D83F31A0E5EBF00AEAB07 /* ARRAY_TEXT.h */; };
-		D17863651A6F105400043C59 /* libiconv.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D17863631A6F105400043C59 /* libiconv.2.dylib */; };
-		D17863661A6F105400043C59 /* libxls.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D17863641A6F105400043C59 /* libxls.3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +65,8 @@
 		18B684F406944F2000CC6A1E /* PublicTypes.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PublicTypes.h; sourceTree = "<group>"; };
 		18B685220694531300CC6A1E /* 4DPlugin.rsrc */ = {isa = PBXFileReference; lastKnownFileType = archive.rsrc; path = 4DPlugin.rsrc; sourceTree = "<group>"; };
 		8D01CCD10486CAD60068D4B7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D11FC35C1ABFDCE000BD1560 /* libiconv.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.dylib; path = XLS.4dbase/Plugins/XLS.bundle/Contents/MacOS/libiconv.2.dylib; sourceTree = "<group>"; };
+		D11FC35D1ABFDCE000BD1560 /* libxls.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxls.2.dylib; path = XLS.4dbase/Plugins/XLS.bundle/Contents/MacOS/libxls.2.dylib; sourceTree = "<group>"; };
 		D130064E12F02D9700702C0E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		D14D83B71A0E5C0F00AEAB07 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
 		D14D83BC1A0E5CC600AEAB07 /* 4D Plugin_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "4D Plugin_Prefix.pch"; path = "../4D Plugin_Prefix.pch"; sourceTree = "<group>"; };
@@ -100,8 +102,6 @@
 		D14D83F11A0E5EBF00AEAB07 /* ARRAY_REAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARRAY_REAL.h; path = "../../4D Plugin API/Classes/ARRAY_REAL.h"; sourceTree = "<group>"; };
 		D14D83F21A0E5EBF00AEAB07 /* ARRAY_TEXT.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = ARRAY_TEXT.cpp; path = "../../4D Plugin API/Classes/ARRAY_TEXT.cpp"; sourceTree = "<group>"; };
 		D14D83F31A0E5EBF00AEAB07 /* ARRAY_TEXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARRAY_TEXT.h; path = "../../4D Plugin API/Classes/ARRAY_TEXT.h"; sourceTree = "<group>"; };
-		D17863631A6F105400043C59 /* libiconv.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.dylib; path = ../lib/MacOS/libiconv.2.dylib; sourceTree = "<group>"; };
-		D17863641A6F105400043C59 /* libxls.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxls.3.dylib; path = ../lib/MacOS/libxls.3.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +109,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D17863651A6F105400043C59 /* libiconv.2.dylib in Frameworks */,
-				D17863661A6F105400043C59 /* libxls.3.dylib in Frameworks */,
+				D11FC35E1ABFDCE000BD1560 /* libiconv.2.dylib in Frameworks */,
+				D11FC35F1ABFDCE000BD1560 /* libxls.2.dylib in Frameworks */,
 				8D01CCCE0486CAD60068D4B7 /* Carbon.framework in Frameworks */,
 				D130064F12F02D9700702C0E /* Cocoa.framework in Frameworks */,
 			);
@@ -122,8 +122,6 @@
 		089C166AFE841209C02AAC07 /* XLS */ = {
 			isa = PBXGroup;
 			children = (
-				D17863631A6F105400043C59 /* libiconv.2.dylib */,
-				D17863641A6F105400043C59 /* libxls.3.dylib */,
 				08FB77ADFE841716C02AAC07 /* Source */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				089C1671FE841209C02AAC07 /* External Frameworks and Libraries */,
@@ -135,6 +133,8 @@
 		089C1671FE841209C02AAC07 /* External Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				D11FC35C1ABFDCE000BD1560 /* libiconv.2.dylib */,
+				D11FC35D1ABFDCE000BD1560 /* libxls.2.dylib */,
 				08EA7FFBFE8413EDC02AAC07 /* Carbon.framework */,
 				D130064E12F02D9700702C0E /* Cocoa.framework */,
 			);
@@ -401,10 +401,10 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../include/xlslib";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				LIBRARY_SEARCH_PATHS = "/Users/miyako/Desktop/XLS-v14/lib/MacOS";
+				LIBRARY_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/XLS.bundle/Contents/MacOS";
 				LIBRARY_STYLE = Bundle;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
@@ -437,10 +437,10 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../include/xlslib";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				LIBRARY_SEARCH_PATHS = "/Users/miyako/Desktop/XLS-v14/lib/MacOS";
+				LIBRARY_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/XLS.bundle/Contents/MacOS";
 				LIBRARY_STYLE = Bundle;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
@@ -471,10 +471,10 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../include/xlslib";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				LIBRARY_SEARCH_PATHS = "/Users/miyako/Desktop/XLS-v14/lib/MacOS";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/XLS.4dbase/Plugins/XLS.bundle/Contents/MacOS";
 				LIBRARY_STYLE = Bundle;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
@@ -498,14 +498,11 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_VERSION = 4.0;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OBJROOT = "$(SRCROOT)/build";
 				SDKROOT = macosx10.6;
 				SYMROOT = "$(SRCROOT)/$(PRODUCT_NAME).4dbase/Plugins";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../include/xlslib/**";
 			};
 			name = Development;
 		};
@@ -517,14 +514,11 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_VERSION = 4.0;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OBJROOT = "$(SRCROOT)/build";
 				SDKROOT = macosx10.6;
 				SYMROOT = "$(SRCROOT)/$(PRODUCT_NAME).4dbase/Plugins";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../include/xlslib/**";
 			};
 			name = Deployment;
 		};
@@ -535,13 +529,10 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_VERSION = 4.0;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx10.6;
 				SYMROOT = "$(SRCROOT)/$(PRODUCT_NAME).4dbase/Plugins";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../include/xlslib/**";
 			};
 			name = Default;
 		};

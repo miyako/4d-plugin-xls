@@ -678,7 +678,7 @@ void* PA_GetWindowsPrintingDC();
 
 long PA_CountActiveProcess      ( );
 long PA_CountTotalProcess       ( );
-void PA_GetProcessInfo          ( long process, PA_Unichar* name, long* state, long* time );
+void PA_GetProcessInfo          ( PA_long32 process, C_TEXT &name, PA_long32* state, PA_long32* time );    
 void PA_FreezeProcess           ( long process );
 void PA_UnfreezeProcess         ( long process );
 char PA_IsProcessDying          ( );

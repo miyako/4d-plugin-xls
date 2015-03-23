@@ -35,7 +35,6 @@
 #include "common/systype.h"
 
 #include "xlslib/row.h"	// has many needed defines used in this file
-#include "xlslib/recdef.h"
 
 // #include "common/xls_pshpack2.h"
 
@@ -135,7 +134,7 @@ namespace xlslib_core
 		{
 			XL_ASSERT(m_is_in_use);
 			XL_ASSERT(len <= GetSize());
-			m_nDataSize = (unsigned)len;
+			m_nDataSize = len;
 		}
 
 		inline size_t GetSize(void) const
@@ -215,7 +214,7 @@ namespace xlslib_core
 	class boolean_t;
 	class err_t;
 	class note_t;
-	class formula_cell_t;
+	class formula_t;
 	class label_t;
 	typedef std::vector<const label_t *>Label_Vect_t;
 	struct color_entry_t;
@@ -303,7 +302,7 @@ namespace xlslib_core
 		CErr* MakeCErr(const err_t& errdef);
 		CMergedCells* MakeCMergedCells();
 		CNote* MakeCNote(const note_t& cmtdef);
-		CFormula* MakeCFormula(const formula_cell_t& fdef);
+		CFormula* MakeCFormula(const formula_t& fdef);
 		CLabel* MakeCLabel(const label_t& labeldef);
 		CIndex* MakeCIndex(unsigned32_t firstrow, unsigned32_t lastrow);
 		CExtFormat* MakeCExtFormat(const xf_t* xfdef);
@@ -314,10 +313,7 @@ namespace xlslib_core
 		CCodePage* MakeCCodePage(unsigned16_t boftype);
 		CDBCell* MakeCDBCell(size_t startblock = DBC_DFLT_STARTBLOCK);
 		CHPSFdoc* MakeCHPSFdoc(const hpsf_doc_t &docdef);
-        CUnit* MakeCExternBook(unsigned16_t sheet_count);
-        CUnit* MakeCExternSheet(const Boundsheet_Vect_t& sheets);
-		CUnit* MakeSST(const Label_Vect_t& labels);
-		CUnit* MakeDrawingGroup(const Boundsheet_Vect_t& m_BoundSheets);
+		CUnit *MakeSST(const Label_Vect_t& labels);
 	};
 }
 

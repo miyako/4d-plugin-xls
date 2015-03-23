@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>698AE65E-DA06-4925-8861-796C31DE9E92</string>
+	<key>IDESourceControlProjectName</key>
+	<string>XLS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E3A4EAF4FFC3A92CC14DACB57F399C2852A04011</key>
+		<string>https://github.com/miyako/4d-plugin-xls.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>XLS/v11/XLS.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E3A4EAF4FFC3A92CC14DACB57F399C2852A04011</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/miyako/4d-plugin-xls.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E3A4EAF4FFC3A92CC14DACB57F399C2852A04011</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E3A4EAF4FFC3A92CC14DACB57F399C2852A04011</string>
+			<key>IDESourceControlWCCName</key>
+			<string>4d-plugin-xls</string>
+		</dict>
+	</array>
+</dict>
+</plist>

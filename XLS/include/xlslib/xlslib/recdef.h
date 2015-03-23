@@ -4,7 +4,7 @@
  * for dynamic generation of Excel(TM) files.
  *
  * Copyright 2004 Yeico S. A. de C. V. All Rights Reserved.
- * Copyright 2008-2013 David Hoerl All Rights Reserved.
+ * Copyright 2008-2011 David Hoerl All Rights Reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification, are
  * permitted provided that the following conditions are met:
@@ -308,7 +308,7 @@ namespace xlslib_core
 	{
 	public:
 		boundsheet_t(CGlobalRecords& gRecords);
-		boundsheet_t(CGlobalRecords& gRecords, const xlslib_strings::u16string& sheetname, unsigned16_t attributes, unsigned32_t streampos);
+		boundsheet_t(CGlobalRecords& gRecords, const u16string& sheetname, unsigned16_t attributes, unsigned32_t streampos);
 		virtual ~boundsheet_t();
 
 	private:
@@ -316,7 +316,7 @@ namespace xlslib_core
 		boundsheet_t& operator=(const boundsheet_t& right);
 
 	protected:
-		xlslib_strings::u16string sheetname;
+		u16string sheetname;
 		unsigned32_t streampos;
 		bool worksheet : 1;
 		bool ex4macro : 1;
@@ -326,15 +326,13 @@ namespace xlslib_core
 		bool hidden : 1;
 		bool veryhidden : 1;
 
-		unsigned16_t notes;
-
 		CBSheet	*sheetData;
 
 		CGlobalRecords& m_GlobalRecords;
 
 	public:
 		unsigned32_t GetStreamPos(void) const { return streampos; }
-		const xlslib_strings::u16string& GetSheetName(void) const
+		const u16string& GetSheetName(void) const
 		{
 			return sheetname;
 		}
@@ -354,8 +352,6 @@ namespace xlslib_core
 			return sh;
 		}
 
-		unsigned16_t GetNoteCount(void) const { return notes; }
-		void BumpNoteCount(void) { ++notes; }
 		void SetSheetStreamPosition(size_t offset);
 		const CBSheet *GetSheetData(void) const { return sheetData; }
 
@@ -364,8 +360,6 @@ namespace xlslib_core
 
 	typedef std::vector<xlslib_core::boundsheet_t* XLSLIB_DFLT_ALLOCATOR> Boundsheet_Vect_t;
 	typedef Boundsheet_Vect_t::iterator Boundsheet_Vect_Itor_t;
-	typedef Boundsheet_Vect_t::const_iterator Boundsheet_Vect_CItor_t;
-
 
 	class CBSheet : public CRecord
 	{
