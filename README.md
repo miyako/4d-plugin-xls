@@ -5,6 +5,12 @@
 
 For reading cell values, you might want to consider [this](https://github.com/miyako/4d-plugin-free-xl).
 
+##Platform
+
+| carbon | cocoa | win32 | win64 |
+|:------:|:-----:|:---------:|:---------:|
+|🆗|🚫|🆗|🆗|
+
 About
 -----
 v14 is for v14 and above, 32/64 bits for both platforms. (Mac requires 10.8+).
