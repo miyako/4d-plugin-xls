@@ -25,7 +25,11 @@ For reading cell values, you might want to consider [this](https://github.com/mi
 -mmacosx-version-min=10.9
 ```
 
+* Library solution for Windows
 
+https://github.com/miyako/msvc-xlslib
+
+https://github.com/miyako/msvc-iconv
 
 About
 -----
