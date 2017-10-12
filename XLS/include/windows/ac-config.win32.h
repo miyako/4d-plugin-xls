@@ -37,7 +37,8 @@
 #undef HAVE_DLFCN_H
 
 /* Define if you have the iconv() function. */
-#undef HAVE_ICONV
+#define HAVE_ICONV 1
+#define HAVE_WORKING_ICONV 1
 
 /* Define to 1 if you have the <inttypes.h> header file. */
 #undef HAVE_INTTYPES_H

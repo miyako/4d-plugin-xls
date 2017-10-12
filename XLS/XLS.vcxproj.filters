@@ -140,6 +140,9 @@
     <ClInclude Include="4D Plugin API\Classes\ARRAY_TIME.h">
       <Filter>Source\4D Plugin API\Classes\ARRAY</Filter>
     </ClInclude>
+    <ClInclude Include="include\windows\iconv.h">
+      <Filter>Source</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="4D Plugin API\4DPluginAPI.def">
