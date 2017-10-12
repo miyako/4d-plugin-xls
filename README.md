@@ -29,9 +29,11 @@ For reading cell values, you might want to consider [this](https://github.com/mi
 
 About
 -----
-v14 is for v14 and above, 32/64 bits for both platforms. (Mac requires 10.8+).
+v14 is for v14 and above, 32/64 bits for both platforms. (Mac requires ~~10.8+~~10.9+).
 
-v11 is for v11 and above, 32/64 bits for Windows and 32 bits for Mac. (Mac requires 10.6+).
+~~v11 is for v11 and above, 32/64 bits for Windows and 32 bits for Mac. (Mac requires 10.6+)~~.
+
+**v11-13 is no longer maintained**.
 
 **Note**: XLSLIB has been modified to accept unicode path names on Windows.
 
