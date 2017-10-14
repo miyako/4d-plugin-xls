@@ -41,7 +41,7 @@ v14 is for v14 and above, 32/64 bits for both platforms. (Mac requires ~~10.8~~ 
 
 **Note**: XLSLIB has been modified to accept unicode path names on Windows.
 
-### Examples
+## Examples
 
 * Adding a SUM() function cell
 
