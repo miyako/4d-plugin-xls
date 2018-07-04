@@ -1,0 +1,24 @@
+-x
+objective-c++
+-arch
+i386
+-stdlib=libc++
+-fpascal-strings
+-Os
+-fno-common
+-DOBJC_OLD_DISPATCH_PROTOTYPES=0
+-isysroot
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk
+-fasm-blocks
+-mmacosx-version-min=10.9
+-fvisibility=hidden
+-fvisibility-inlines-hidden
+-Iinclude/macos
+-Iinclude/macos/common
+-Iinclude/macos/xlslib
+-I/Users/miyako/Documents/GitHub/4d-plugin/cross-platform/4d-plugin-xls/XLS/XLS.4dbase/Plugins/include
+-F/Users/miyako/Documents/GitHub/4d-plugin/cross-platform/4d-plugin-xls/XLS/XLS.4dbase/Plugins
+i386-apple-darwin15.6.0
+"4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.42.1)"
+SDK_PRODUCT_BUILD_VERSION=13F26
+13F26

@@ -10,6 +10,8 @@
 
 #define PACKAGE_VERSION "2.3.4"
 
+#include <mutex>
+
 void DeinitPlugin();
 
 // --- Workbook

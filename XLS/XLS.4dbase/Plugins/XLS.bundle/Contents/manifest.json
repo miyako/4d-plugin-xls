@@ -1,1 +1,576 @@
-﻿{"name":"XLS","id":20000,"commands":[{"theme":"Workbook","syntax":"XLS WORKBOOK Create format(&L):L"},{"theme":"Workbook","syntax":"XLS WORKBOOK Create font(&L;&T):L"},{"theme":"Workbook","syntax":"XLS WORKBOOK Save document(&L;&T):L"},{"theme":"Workbook","syntax":"XLS WORKBOOK CLEAR(&L)"},{"theme":"Workbook","syntax":"XLS WORKBOOK Create:L"},{"theme":"Workbook","syntax":"XLS WORKBOOK Create sheet(&L;&T):L"},{"theme":"Workbook","syntax":"XLS WORKBOOK Create fn0 node(&L;&L):L"},{"theme":"Workbook","syntax":"XLS WORKBOOK Create area node(&L;&L;&L;&L;&L):L"},{"theme":"Workbook","syntax":"XLS WORKBOOK Create cell node(&L;&L;&L;&L):L"},{"theme":"Workbook","syntax":"XLS WORKBOOK Create fn1 node(&L;&L;&L):L"},{"theme":"Workbook","syntax":"XLS WORKBOOK Create fn2 node(&L;&L;&L;&L):L"},{"theme":"Worksheet","syntax":"XLS WORKSHEET Set cell real(&L;&L;&L;&L;&8;&L):L"},{"theme":"Worksheet","syntax":"XLS WORKSHEET Set cell text(&L;&L;&L;&L;&T):L"},{"theme":"Worksheet","syntax":"XLS WORKSHEET SET ROW HEIGHT(&L;&L;&L;&L)"},{"theme":"Worksheet","syntax":"XLS WORKSHEET SET COL WIDTH(&L;&L;&L;&L)"},{"theme":"Worksheet","syntax":"XLS WORKSHEET MERGE CELLS(&L;&L;&L;&L;&L)"},{"theme":"Worksheet","syntax":"XLS WORKSHEET Get cell range(&L;&L;&L;&L;&L):L"},{"theme":"Worksheet","syntax":"XLS WORKSHEET Get cell(&L;&L;&L):L"},{"theme":"Worksheet","syntax":"XLS WORKSHEET Set cell bool(&L;&L;&L;&L;&L):L"},{"theme":"Worksheet","syntax":"XLS WORKSHEET Set cell note(&L;&L;&L;&L;&T;&T):L"},{"theme":"Worksheet","syntax":"XLS WORKSHEET Set cell link(&L;&L;&L;&L;&T;&T):L"},{"theme":"Worksheet","syntax":"XLS WORKSHEET Set cell fn(&L;&L;&L;&L;&L):L"},{"theme":"Worksheet","syntax":"XLS WORKSHEET RELEASE(&L)"},{"theme":"Cell","syntax":"XLS CELL SET FONT(&L;&L)"},{"theme":"Cell","syntax":"XLS CELL SET FORMAT(&L;&L)"},{"theme":"Cell","syntax":"XLS CELL Get row(&L):L"},{"theme":"Cell","syntax":"XLS CELL Get col(&L):L"},{"theme":"Cell","syntax":"XLS CELL SET NUMERIC FORMAT(&L;&L)"},{"theme":"Cell","syntax":"XLS CELL Get format(&L):L"},{"theme":"Cell","syntax":"XLS CELL SET ITALIC(&L;&L)"},{"theme":"Cell","syntax":"XLS CELL SET STRIKEOUT(&L;&L)"},{"theme":"Cell","syntax":"XLS CELL SET SHADOW(&L;&L)"},{"theme":"Cell","syntax":"XLS CELL SET SCRIPT STYLE(&L;&L)"},{"theme":"Cell","syntax":"XLS CELL SET UNDERLINE STYLE(&L;&L)"},{"theme":"Cell","syntax":"XLS CELL SET BOLDNESS(&L;&L)"},{"theme":"Cell","syntax":"XLS CELL SET FONT HEIGHT(&L;&L)"},{"theme":"Cell","syntax":"XLS CELL SET FONT NAME(&L;&T)"},{"theme":"Cell","syntax":"XLS CELL SET HIDDEN(&L;&L)"},{"theme":"Cell","syntax":"XLS CELL SET LOCKED(&L;&L)"},{"theme":"Cell","syntax":"XLS CELL SET BORDER STYLE(&L;&L;&L)"},{"theme":"Cell","syntax":"XLS CELL SET WRAP(&L;&L)"},{"theme":"Cell","syntax":"XLS CELL SET HALIGN(&L;&L)"},{"theme":"Cell","syntax":"XLS CELL SET VALIGN(&L;&L)"},{"theme":"Cell","syntax":"XLS CELL SET ORIENTATION(&L;&L)"},{"theme":"Cell","syntax":"XLS CELL SET COLOR(&L;&L;&L)"},{"theme":"Cell","syntax":"XLS CELL SET FILL STYLE(&L;&L)"},{"theme":"Cell","syntax":"XLS CELL SET BORDER COLOR(&L;&L;&L)"},{"theme":"Cell","syntax":"XLS CELL RELEASE(&L)"},{"theme":"Range","syntax":"XLS RANGE SET FONT(&L;&L)"},{"theme":"Range","syntax":"XLS RANGE SET NUMERIC FORMAT(&L;&L)"},{"theme":"Range","syntax":"XLS RANGE SET ITALIC(&L;&L)"},{"theme":"Range","syntax":"XLS RANGE SET STRIKEOUT(&L;&L)"},{"theme":"Range","syntax":"XLS RANGE SET SHADOW(&L;&L)"},{"theme":"Range","syntax":"XLS RANGE SET SCRIPT STYLE(&L;&L)"},{"theme":"Range","syntax":"XLS RANGE SET UNDERLINE STYLE(&L;&L)"},{"theme":"Range","syntax":"XLS RANGE SET BOLDNESS(&L;&L)"},{"theme":"Range","syntax":"XLS RANGE SET FONT HEIGHT(&L;&L)"},{"theme":"Range","syntax":"XLS RANGE SET FONT NAME(&L;&T)"},{"theme":"Range","syntax":"XLS RANGE SET HIDDEN(&L;&L)"},{"theme":"Range","syntax":"XLS RANGE SET LOCKED(&L;&L)"},{"theme":"Range","syntax":"XLS RANGE SET BORDER STYLE(&L;&L;&L)"},{"theme":"Range","syntax":"XLS RANGE SET WRAP(&L;&L)"},{"theme":"Range","syntax":"XLS RANGE SET HALIGN(&L;&L)"},{"theme":"Range","syntax":"XLS RANGE SET VALIGN(&L;&L)"},{"theme":"Range","syntax":"XLS RANGE SET ORIENTATION(&L;&L)"},{"theme":"Range","syntax":"XLS RANGE SET COLOR(&L;&L;&L)"},{"theme":"Range","syntax":"XLS RANGE SET FILL STYLE(&L;&L)"},{"theme":"Range","syntax":"XLS RANGE SET BORDER COLOR(&L;&L;&L)"},{"theme":"Range","syntax":"XLS RANGE RELEASE(&L)"},{"theme":"Font","syntax":"XLS FONT SET NAME(&L;&T)"},{"theme":"Font","syntax":"XLS FONT SET HEIGHT(&L;&L)"},{"theme":"Font","syntax":"XLS FONT SET BOLDNESS(&L;&L)"},{"theme":"Font","syntax":"XLS FONT SET UNDERLINE(&L;&L)"},{"theme":"Font","syntax":"XLS FONT SET SCRIPT STYLE(&L;&L)"},{"theme":"Font","syntax":"XLS FONT SET COLOR(&L;&L)"},{"theme":"Font","syntax":"XLS FONT SET STRIKEOUT(&L;&L)"},{"theme":"Font","syntax":"XLS FONT SET SHADOW(&L;&L)"},{"theme":"Font","syntax":"XLS FONT Get name(&L):T"},{"theme":"Font","syntax":"XLS FONT Get height(&L):L"},{"theme":"Font","syntax":"XLS FONT Get boldness(&L):L"},{"theme":"Font","syntax":"XLS FONT Get underline(&L):L"},{"theme":"Font","syntax":"XLS FONT Get script style(&L):L"},{"theme":"Font","syntax":"XLS FONT Get color id(&L):L"},{"theme":"Font","syntax":"XLS FONT Get strikeout(&L):L"},{"theme":"Font","syntax":"XLS FONT Get shadow(&L):L"},{"theme":"Font","syntax":"XLS FONT SET ITALIC(&L;&L)"},{"theme":"Font","syntax":"XLS FONT Get italic(&L):L"},{"theme":"Font","syntax":"XLS FONT RELEASE(&L)"},{"theme":"Format","syntax":"XLS FORMAT Get valign(&L):L"},{"theme":"Format","syntax":"XLS FORMAT SET FONT(&L;&L)"},{"theme":"Format","syntax":"XLS FORMAT Get font(&L):L"},{"theme":"Format","syntax":"XLS FORMAT SET NUMERIC FORMAT(&L;&L)"},{"theme":"Format","syntax":"XLS FORMAT Get numeric format(&L):L"},{"theme":"Format","syntax":"XLS FORMAT SET HALIGN(&L;&L)"},{"theme":"Format","syntax":"XLS FORMAT SET VALIGN(&L;&L)"},{"theme":"Format","syntax":"XLS FORMAT SET ORIENTATION(&L;&L)"},{"theme":"Format","syntax":"XLS FORMAT SET COLOR(&L;&L;&L)"},{"theme":"Format","syntax":"XLS FORMAT SET FILL STYLE(&L;&L)"},{"theme":"Format","syntax":"XLS FORMAT SET WRAP(&L;&L)"},{"theme":"Format","syntax":"XLS FORMAT SET BORDER STYLE(&L;&L;&L)"},{"theme":"Format","syntax":"XLS FORMAT SET LOCKED(&L;&L)"},{"theme":"Format","syntax":"XLS FORMAT SET HIDDEN(&L;&L)"},{"theme":"Format","syntax":"XLS FORMAT Get halign(&L):L"},{"theme":"Format","syntax":"XLS FORMAT Get orientation(&L):L"},{"theme":"Format","syntax":"XLS FORMAT GET COLOR ID(&L;&L;&L)"},{"theme":"Format","syntax":"XLS FORMAT Get fill style(&L):L"},{"theme":"Format","syntax":"XLS FORMAT Get wrap(&L):L"},{"theme":"Format","syntax":"XLS FORMAT SET BORDER COLOR(&L;&L;&L)"},{"theme":"Format","syntax":"XLS FORMAT Get border style(&L;&L):L"},{"theme":"Format","syntax":"XLS FORMAT Get border color id(&L;&L):L"},{"theme":"Format","syntax":"XLS FORMAT Get locked(&L):L"},{"theme":"Format","syntax":"XLS FORMAT Get hidden(&L):L"},{"theme":"Format","syntax":"XLS FORMAT RELEASE(&L)"},{"theme":"Node","syntax":"XLS NODE RELEASE(&L)"}]}
+﻿{
+	"name": "XLS",
+	"id": 20000,
+	"commands": [
+							 {
+							 "theme": "Workbook",
+							 "syntax": "XLS WORKBOOK Create format(&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Workbook",
+							 "syntax": "XLS WORKBOOK Create font(&L;&T):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Workbook",
+							 "syntax": "XLS WORKBOOK Save document(&L;&T):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Workbook",
+							 "syntax": "XLS WORKBOOK CLEAR(&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Workbook",
+							 "syntax": "XLS WORKBOOK Create:L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Workbook",
+							 "syntax": "XLS WORKBOOK Create sheet(&L;&T):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Workbook",
+							 "syntax": "XLS WORKBOOK Create fn0 node(&L;&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Workbook",
+							 "syntax": "XLS WORKBOOK Create area node(&L;&L;&L;&L;&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Workbook",
+							 "syntax": "XLS WORKBOOK Create cell node(&L;&L;&L;&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Workbook",
+							 "syntax": "XLS WORKBOOK Create fn1 node(&L;&L;&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Workbook",
+							 "syntax": "XLS WORKBOOK Create fn2 node(&L;&L;&L;&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Worksheet",
+							 "syntax": "XLS WORKSHEET Set cell real(&L;&L;&L;&L;&8;&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Worksheet",
+							 "syntax": "XLS WORKSHEET Set cell text(&L;&L;&L;&L;&T):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Worksheet",
+							 "syntax": "XLS WORKSHEET SET ROW HEIGHT(&L;&L;&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Worksheet",
+							 "syntax": "XLS WORKSHEET SET COL WIDTH(&L;&L;&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Worksheet",
+							 "syntax": "XLS WORKSHEET MERGE CELLS(&L;&L;&L;&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Worksheet",
+							 "syntax": "XLS WORKSHEET Get cell range(&L;&L;&L;&L;&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Worksheet",
+							 "syntax": "XLS WORKSHEET Get cell(&L;&L;&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Worksheet",
+							 "syntax": "XLS WORKSHEET Set cell bool(&L;&L;&L;&L;&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Worksheet",
+							 "syntax": "XLS WORKSHEET Set cell note(&L;&L;&L;&L;&T;&T):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Worksheet",
+							 "syntax": "XLS WORKSHEET Set cell link(&L;&L;&L;&L;&T;&T):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Worksheet",
+							 "syntax": "XLS WORKSHEET Set cell fn(&L;&L;&L;&L;&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Worksheet",
+							 "syntax": "XLS WORKSHEET RELEASE(&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL SET FONT(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL SET FORMAT(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL Get row(&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL Get col(&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL SET NUMERIC FORMAT(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL Get format(&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL SET ITALIC(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL SET STRIKEOUT(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL SET SHADOW(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL SET SCRIPT STYLE(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL SET UNDERLINE STYLE(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL SET BOLDNESS(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL SET FONT HEIGHT(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL SET FONT NAME(&L;&T)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL SET HIDDEN(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL SET LOCKED(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL SET BORDER STYLE(&L;&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL SET WRAP(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL SET HALIGN(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL SET VALIGN(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL SET ORIENTATION(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL SET COLOR(&L;&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL SET FILL STYLE(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL SET BORDER COLOR(&L;&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Cell",
+							 "syntax": "XLS CELL RELEASE(&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Range",
+							 "syntax": "XLS RANGE SET FONT(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Range",
+							 "syntax": "XLS RANGE SET NUMERIC FORMAT(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Range",
+							 "syntax": "XLS RANGE SET ITALIC(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Range",
+							 "syntax": "XLS RANGE SET STRIKEOUT(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Range",
+							 "syntax": "XLS RANGE SET SHADOW(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Range",
+							 "syntax": "XLS RANGE SET SCRIPT STYLE(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Range",
+							 "syntax": "XLS RANGE SET UNDERLINE STYLE(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Range",
+							 "syntax": "XLS RANGE SET BOLDNESS(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Range",
+							 "syntax": "XLS RANGE SET FONT HEIGHT(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Range",
+							 "syntax": "XLS RANGE SET FONT NAME(&L;&T)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Range",
+							 "syntax": "XLS RANGE SET HIDDEN(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Range",
+							 "syntax": "XLS RANGE SET LOCKED(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Range",
+							 "syntax": "XLS RANGE SET BORDER STYLE(&L;&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Range",
+							 "syntax": "XLS RANGE SET WRAP(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Range",
+							 "syntax": "XLS RANGE SET HALIGN(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Range",
+							 "syntax": "XLS RANGE SET VALIGN(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Range",
+							 "syntax": "XLS RANGE SET ORIENTATION(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Range",
+							 "syntax": "XLS RANGE SET COLOR(&L;&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Range",
+							 "syntax": "XLS RANGE SET FILL STYLE(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Range",
+							 "syntax": "XLS RANGE SET BORDER COLOR(&L;&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Range",
+							 "syntax": "XLS RANGE RELEASE(&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Font",
+							 "syntax": "XLS FONT SET NAME(&L;&T)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Font",
+							 "syntax": "XLS FONT SET HEIGHT(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Font",
+							 "syntax": "XLS FONT SET BOLDNESS(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Font",
+							 "syntax": "XLS FONT SET UNDERLINE(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Font",
+							 "syntax": "XLS FONT SET SCRIPT STYLE(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Font",
+							 "syntax": "XLS FONT SET COLOR(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Font",
+							 "syntax": "XLS FONT SET STRIKEOUT(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Font",
+							 "syntax": "XLS FONT SET SHADOW(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Font",
+							 "syntax": "XLS FONT Get name(&L):T",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Font",
+							 "syntax": "XLS FONT Get height(&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Font",
+							 "syntax": "XLS FONT Get boldness(&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Font",
+							 "syntax": "XLS FONT Get underline(&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Font",
+							 "syntax": "XLS FONT Get script style(&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Font",
+							 "syntax": "XLS FONT Get color id(&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Font",
+							 "syntax": "XLS FONT Get strikeout(&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Font",
+							 "syntax": "XLS FONT Get shadow(&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Font",
+							 "syntax": "XLS FONT SET ITALIC(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Font",
+							 "syntax": "XLS FONT Get italic(&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Font",
+							 "syntax": "XLS FONT RELEASE(&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT Get valign(&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT SET FONT(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT Get font(&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT SET NUMERIC FORMAT(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT Get numeric format(&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT SET HALIGN(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT SET VALIGN(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT SET ORIENTATION(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT SET COLOR(&L;&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT SET FILL STYLE(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT SET WRAP(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT SET BORDER STYLE(&L;&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT SET LOCKED(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT SET HIDDEN(&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT Get halign(&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT Get orientation(&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT GET COLOR ID(&L;&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT Get fill style(&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT Get wrap(&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT SET BORDER COLOR(&L;&L;&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT Get border style(&L;&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT Get border color id(&L;&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT Get locked(&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT Get hidden(&L):L",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Format",
+							 "syntax": "XLS FORMAT RELEASE(&L)",
+							 "theadSafe": true
+							 },
+							 {
+							 "theme": "Node",
+							 "syntax": "XLS NODE RELEASE(&L)",
+							 "theadSafe": true
+							 }
+							 ]
+}

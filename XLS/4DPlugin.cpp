@@ -14,6 +14,8 @@
 
 #include "xlslib.h"
 
+std::mutex globalMutex;
+
 using namespace xlslib_core;
 
 std::map<uint32_t, xlslib_core::workbook*> _workbooks;
@@ -28,6 +30,8 @@ std::map<uint32_t, xlslib_core::expression_node_t*> _nodes;
 
 void _workbookCreate(C_LONGINT &index){
 
+	std::lock_guard<std::mutex> lock(globalMutex);
+	
 	//as long as we do this (and delete) we should statically link on windows 
 	workbook *w = new workbook;
 
@@ -43,6 +47,8 @@ void _workbookCreate(C_LONGINT &index){
 }
 
 void _workbookDelete(C_LONGINT &index){
+	
+	std::lock_guard<std::mutex> lock(globalMutex);
 	
 	workbook *w = NULL;
 	
@@ -60,6 +66,8 @@ void _workbookDelete(C_LONGINT &index){
 
 workbook *_workbookGet(C_LONGINT &index){
 	
+	std::lock_guard<std::mutex> lock(globalMutex);
+	
 	workbook *w = NULL;
 	
 	std::map<uint32_t, xlslib_core::workbook*>::iterator pos = _workbooks.find(index.getIntValue());
@@ -76,6 +84,8 @@ workbook *_workbookGet(C_LONGINT &index){
 // --- Worksheet
 
 worksheet *_worksheetCreate(workbook *w, C_TEXT &name, C_LONGINT &index){
+	
+	std::lock_guard<std::mutex> lock(globalMutex);
 	
 	worksheet *s = NULL;
 	
@@ -105,6 +115,8 @@ worksheet *_worksheetCreate(workbook *w, C_TEXT &name, C_LONGINT &index){
 
 worksheet *_worksheetGet(C_LONGINT &index){
 	
+	std::lock_guard<std::mutex> lock(globalMutex);
+	
 	worksheet *s = NULL;
 	
 	std::map<uint32_t, xlslib_core::worksheet*>::iterator pos = _worksheets.find(index.getIntValue());
@@ -117,6 +129,8 @@ worksheet *_worksheetGet(C_LONGINT &index){
 }
 
 bool _worksheetRelease(C_LONGINT &index){
+	
+	std::lock_guard<std::mutex> lock(globalMutex);
 	
 	bool success = false;		
 	
@@ -135,6 +149,8 @@ bool _worksheetRelease(C_LONGINT &index){
 // --- Format
 
 xf_t *_formatCreate(workbook *w, C_LONGINT &index){
+	
+	std::lock_guard<std::mutex> lock(globalMutex);
 	
 	xf_t *f = NULL;
 	
@@ -161,6 +177,8 @@ xf_t *_formatCreate(workbook *w, C_LONGINT &index){
 
 xf_t *_formatGet(C_LONGINT &index){
 	
+	std::lock_guard<std::mutex> lock(globalMutex);
+	
 	xf_t *f = NULL;
 	
 	std::map<uint32_t, xlslib_core::xf_t*>::iterator pos = _formats.find(index.getIntValue());
@@ -173,6 +191,8 @@ xf_t *_formatGet(C_LONGINT &index){
 }
 
 bool _formatRelease(C_LONGINT &index){
+	
+	std::lock_guard<std::mutex> lock(globalMutex);
 	
 	bool success = false;		
 	
@@ -191,6 +211,8 @@ bool _formatRelease(C_LONGINT &index){
 // --- Font
 
 font_t *_fontCreate(workbook *w, C_TEXT &name, C_LONGINT &index){
+	
+	std::lock_guard<std::mutex> lock(globalMutex);
 	
 	font_t *f = NULL;
 	
@@ -228,6 +250,8 @@ font_t *_fontCreate(workbook *w, C_TEXT &name, C_LONGINT &index){
 
 font_t *_fontGet(C_LONGINT &index){
 	
+	std::lock_guard<std::mutex> lock(globalMutex);
+	
 	font_t *f = NULL;
 	
 	std::map<uint32_t, xlslib_core::font_t*>::iterator pos = _fonts.find(index.getIntValue());
@@ -240,6 +264,8 @@ font_t *_fontGet(C_LONGINT &index){
 }
 
 bool _fontRelease(C_LONGINT &index){
+	
+	std::lock_guard<std::mutex> lock(globalMutex);
 	
 	bool success = false;	
 	
@@ -259,6 +285,8 @@ bool _fontRelease(C_LONGINT &index){
 
 void _cellMap(cell_t *c, C_LONGINT &index){
 	
+	std::lock_guard<std::mutex> lock(globalMutex);
+	
 	unsigned int i = 1;
 	
 	while (_cells.find(i) != _cells.end()) {
@@ -275,6 +303,8 @@ void _cellMap(cell_t *c, C_LONGINT &index){
 
 cell_t *_cellGet(C_LONGINT &index){
 	
+	std::lock_guard<std::mutex> lock(globalMutex);
+	
 	cell_t *c = NULL;
 	
 	std::map<uint32_t, xlslib_core::cell_t*>::iterator pos = _cells.find(index.getIntValue());
@@ -287,6 +317,8 @@ cell_t *_cellGet(C_LONGINT &index){
 }
 
 bool _cellRelease(C_LONGINT &index){
+	
+	std::lock_guard<std::mutex> lock(globalMutex);
 	
 	bool success = false;
 	
@@ -306,6 +338,8 @@ bool _cellRelease(C_LONGINT &index){
 
 void _rangeMap(range *r, C_LONGINT &index){
 	
+	std::lock_guard<std::mutex> lock(globalMutex);
+	
 	unsigned int i = 1;
 	
 	while (_ranges.find(i) != _ranges.end()) {
@@ -323,6 +357,8 @@ void _rangeMap(range *r, C_LONGINT &index){
 
 range *_rangeGet(C_LONGINT &index){
 	
+	std::lock_guard<std::mutex> lock(globalMutex);
+	
 	range *r = NULL;
 	
 	std::map<uint32_t, xlslib_core::range*>::iterator pos = _ranges.find(index.getIntValue());
@@ -335,6 +371,8 @@ range *_rangeGet(C_LONGINT &index){
 }
 
 bool _rangeRelease(C_LONGINT &index){
+	
+	std::lock_guard<std::mutex> lock(globalMutex);
 	
 	bool success = false;	
 	
@@ -354,6 +392,8 @@ bool _rangeRelease(C_LONGINT &index){
 
 void _nodeMap(expression_node_t *n, C_LONGINT &index){
 	
+	std::lock_guard<std::mutex> lock(globalMutex);
+	
 	unsigned int i = 1;
 	
 	while (_nodes.find(i) != _nodes.end()) {
@@ -371,6 +411,8 @@ void _nodeMap(expression_node_t *n, C_LONGINT &index){
 
 expression_node_t *_nodeGet(C_LONGINT &index){
 	
+	std::lock_guard<std::mutex> lock(globalMutex);
+	
 	expression_node_t *n = NULL;
 	
 	std::map<uint32_t, xlslib_core::expression_node_t*>::iterator pos = _nodes.find(index.getIntValue());
@@ -383,6 +425,8 @@ expression_node_t *_nodeGet(C_LONGINT &index){
 }
 
 bool _nodeRelease(C_LONGINT &index){
+	
+	std::lock_guard<std::mutex> lock(globalMutex);
 	
 	bool success = false;	
 	
@@ -891,8 +935,6 @@ void CommandDispatcher (PA_long32 pProcNum, sLONG_PTR *pResult, PackagePtr pPara
 			
 	}
 }
-
-#pragma mark -
 
 // ----------------------------------- Workbook -----------------------------------
 
