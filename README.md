@@ -25,7 +25,11 @@ For reading cell values, you might want to consider [this](https://github.com/mi
 -mmacosx-version-min=10.9
 ```
 
+* Library solution for Windows
 
+https://github.com/miyako/msvc-xlslib
+
+https://github.com/miyako/msvc-iconv
 
 About
 -----
@@ -37,9 +41,10 @@ v14 is for v14 and above, 32/64 bits for both platforms. (Mac requires ~~10.8~~ 
 
 **Note**: XLSLIB has been modified to accept unicode path names on Windows.
 
-Example
----
-Adding a SUM() function cell
+## Examples
+
+* Adding a SUM() function cell
+
 ```
 $text:=Unicode_sample 
 
