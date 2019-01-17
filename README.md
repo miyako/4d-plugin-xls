@@ -89,3 +89,7 @@ $success:=XLS WORKBOOK Save document ($book;System folder(Desktop)+$text+".xls")
 
 XLS WORKBOOK CLEAR ($book)
 ```
+
+## Discussions
+
+https://forums.4d.com/Post//28120080/1/
