@@ -21,7 +21,7 @@ For reading cell values, you might want to consider [this](https://github.com/mi
 
 ![preemption xx](https://user-images.githubusercontent.com/1725068/41327179-4e839948-6efd-11e8-982b-a670d511e04f.png)
 
-### Build Information
+### Library Information
 
 * Notable build flags on Mac
 
@@ -36,14 +36,6 @@ For reading cell values, you might want to consider [this](https://github.com/mi
 https://github.com/miyako/msvc-xlslib
 
 https://github.com/miyako/msvc-iconv
-
-About
------
-v14 is for v14 and above, 32/64 bits for both platforms. (Mac requires ~~10.8~~ 10.9+).
-
-~~v11 is for v11 and above, 32/64 bits for Windows and 32 bits for Mac. (Mac requires 10.6+)~~.
-
-**v11-13 is no longer maintained**.
 
 **Note**: XLSLIB has been modified to accept unicode path names on Windows.
 
