@@ -9,7 +9,7 @@ For reading cell values, you might want to consider [this](https://github.com/mi
 
 | carbon | cocoa | win32 | win64 |
 |:------:|:-----:|:---------:|:---------:|
-|<img src="https://cloud.githubusercontent.com/assets/1725068/22371562/1b091f0a-e4db-11e6-8458-8653954a7cce.png" width="24" height="24" />|<img src="https://cloud.githubusercontent.com/assets/1725068/22371562/1b091f0a-e4db-11e6-8458-8653954a7cce.png" width="24" height="24" />|<img src="https://cloud.githubusercontent.com/assets/1725068/22371562/1b091f0a-e4db-11e6-8458-8653954a7cce.png" width="24" height="24" />|<img src="https://cloud.githubusercontent.com/assets/1725068/22371562/1b091f0a-e4db-11e6-8458-8653954a7cce.png" width="24" height="24" />|
+||<img src="https://cloud.githubusercontent.com/assets/1725068/22371562/1b091f0a-e4db-11e6-8458-8653954a7cce.png" width="24" height="24" />|<img src="https://cloud.githubusercontent.com/assets/1725068/22371562/1b091f0a-e4db-11e6-8458-8653954a7cce.png" width="24" height="24" />|<img src="https://cloud.githubusercontent.com/assets/1725068/22371562/1b091f0a-e4db-11e6-8458-8653954a7cce.png" width="24" height="24" />|
 
 ### Version
 
@@ -21,7 +21,7 @@ For reading cell values, you might want to consider [this](https://github.com/mi
 
 ![preemption xx](https://user-images.githubusercontent.com/1725068/41327179-4e839948-6efd-11e8-982b-a670d511e04f.png)
 
-### Build Information
+### Library Information
 
 * Notable build flags on Mac
 
@@ -36,14 +36,6 @@ For reading cell values, you might want to consider [this](https://github.com/mi
 https://github.com/miyako/msvc-xlslib
 
 https://github.com/miyako/msvc-iconv
-
-About
------
-v14 is for v14 and above, 32/64 bits for both platforms. (Mac requires ~~10.8~~ 10.9+).
-
-~~v11 is for v11 and above, 32/64 bits for Windows and 32 bits for Mac. (Mac requires 10.6+)~~.
-
-**v11-13 is no longer maintained**.
 
 **Note**: XLSLIB has been modified to accept unicode path names on Windows.
 
@@ -89,3 +81,7 @@ $success:=XLS WORKBOOK Save document ($book;System folder(Desktop)+$text+".xls")
 
 XLS WORKBOOK CLEAR ($book)
 ```
+
+## Discussions
+
+https://forums.4d.com/Post//28120080/1/
