@@ -5,7 +5,7 @@
 4d-plugin-xls
 =============
 
-4D plugin to write XLS documents using [xlslib](http://xlslib.sourceforge.net/) 2.5.0.
+4D plugin to write XLS documents using [xlslib](https://xlslib.sourceforge.net/) 2.5.0.
 
 For reading cell values, you might want to consider [this](https://github.com/miyako/4d-plugin-free-xl).
 
