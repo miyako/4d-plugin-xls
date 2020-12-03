@@ -82,3 +82,7 @@ https://forums.4d.com/Post//28120080/1/
 
 日本語のフォント名は指定できないようです。たとえば`ＭＳ Ｐゴシック`は`MS PGothic`と指定しなければなりません。
 
+## その他
+
+フォントサイズは[TWIP](https://ja.wikipedia.org/wiki/Twip)（ポイントの20分の1）単位で指定します。
+
