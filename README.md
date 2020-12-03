@@ -5,7 +5,7 @@
 4d-plugin-xls
 =============
 
-4D plugin to write XLS documents using [xlslib](http://xlslib.sourceforge.net/) 2.5.0.
+4D plugin to write XLS documents using [xlslib](https://sourceforge.net/projects/xlslib/) 2.5.0.
 
 For reading cell values, you might want to consider [this](https://github.com/miyako/4d-plugin-free-xl).
 
@@ -77,3 +77,12 @@ XLS WORKBOOK CLEAR ($book)
 ## Discussions
 
 https://forums.4d.com/Post//28120080/1/
+
+## 日本語特有の制限
+
+日本語のフォント名は指定できないようです。たとえば`ＭＳ Ｐゴシック`は`MS PGothic`と指定しなければなりません。
+
+## その他
+
+フォントサイズは[TWIP](https://ja.wikipedia.org/wiki/Twip)（ポイントの20分の1）単位で指定します。
+
