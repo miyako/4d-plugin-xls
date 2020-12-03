@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><preferences stamp="8">
+	<com.4d>
+		<database>
+			<cache flush_buffer_delay="15" size_fixed="32" size_maximum="100" size_reserved="128"/>
+			<misc/>
+		</database>
+		<interface>
+			<misc/>
+		</interface>
+		<server>
+			<misc/>
+			<network>
+				<options use_legacy_network_layer="false"/>
+				<client_server use_encryption="false"/>
+			</network>
+		</server>
+		<web>
+			<standalone_server>
+				<configuration allowHttp="false" allow_ssl="false" automatic_session_management="false" publish_at_startup="true"/>
+				<options>
+					<web_processes timeout_for_inactives="5"/>
+					<filters allow_4dsync_urls="true"/>
+					<cache use_4d_web_cache="false"/>
+				</options>
+				<misc/>
+			</standalone_server>
+			<remote>
+				<options>
+					<web_processes timeout_for_inactives="5"/>
+					<filters allow_4dsync_urls="true"/>
+					<cache use_4d_web_cache="false"/>
+				</options>
+				<configuration automatic_session_management="false"/>
+				<misc/>
+			</remote>
+		</web>
+		<general>
+			<mover always_display_dialog="2"/>
+		</general>
+		<deployment>
+			<options/>
+		</deployment>
+	</com.4d>
+</preferences>

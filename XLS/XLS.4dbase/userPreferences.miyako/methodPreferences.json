@@ -1,0 +1,47 @@
+﻿{
+	"Sources/Methods/Unicode_sample.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 9,
+		"lastSelectedLine": 9,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2020-12-03T05:13:55.802Z"
+	},
+	"Sources/Methods/Method2.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 26,
+		"lastSelectedLine": 26,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2020-12-03T05:13:55.803Z"
+	},
+	"Sources/Methods/Method3.4dm": {
+		"startSelection": 28,
+		"endSelection": 28,
+		"firstSelectedLine": 44,
+		"lastSelectedLine": 44,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2020-12-03T05:13:55.804Z"
+	},
+	"Sources/Methods/Method4.4dm": {
+		"startSelection": 25,
+		"endSelection": 25,
+		"firstSelectedLine": 25,
+		"lastSelectedLine": 25,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2020-12-03T05:13:55.804Z"
+	},
+	"Sources/Methods/Method5.4dm": {
+		"startSelection": 9,
+		"endSelection": 9,
+		"firstSelectedLine": 46,
+		"lastSelectedLine": 46,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2020-12-03T05:13:55.804Z"
+	}
+}

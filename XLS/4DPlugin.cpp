@@ -26,6 +26,23 @@ std::map<uint32_t, xlslib_core::xf_t*> _formats;
 std::map<uint32_t, xlslib_core::cell_t*> _cells;
 std::map<uint32_t, xlslib_core::expression_node_t*> _nodes;
 
+#pragma mark -
+
+static void convertFontName(C_TEXT& from, std::string& to) {
+   
+    uint32_t dataSize = (from.getUTF16Length() * sizeof(PA_Unichar) * 2)+ sizeof(uint8_t);
+    std::vector<char> buf(dataSize);
+    
+    PA_long32 len = PA_ConvertCharsetToCharset((char *)from.getUTF16StringPtr(),
+    from.getUTF16Length() * sizeof(PA_Unichar),
+    eVTC_UTF_16,
+    (char *)&buf[0],
+    dataSize,
+    eVTC_SHIFT_JIS);
+    
+    to = std::string((const char *)&buf[0]);
+}
+
 // --- Workbook
 
 void _workbookCreate(C_LONGINT &index){
@@ -217,13 +234,12 @@ font_t *_fontCreate(workbook *w, C_TEXT &name, C_LONGINT &index){
 	font_t *f = NULL;
 	
 	if(w){
+
+        std::string n;
 		
-		CUTF8String s;
-		name.copyUTF8String(&s);
-		
-		std::string n = std::string((char *)s.c_str());	
-		
-	//	if(CGlobalRecords::IsASCII(n)){
+        convertFontName(name, n);
+        
+		if(CGlobalRecords::IsASCII(n)){
 			
 			unsigned int i = 1;
 			
@@ -240,7 +256,7 @@ font_t *_fontCreate(workbook *w, C_TEXT &name, C_LONGINT &index){
 				
 			}
 			
-	//	}
+		}
 	
 	}
 	
@@ -937,8 +953,6 @@ void CommandDispatcher (PA_long32 pProcNum, sLONG_PTR *pResult, PackagePtr pPara
 }
 
 // ----------------------------------- Workbook -----------------------------------
-
-#pragma mark -
 
 #pragma mark Workbook
 
@@ -1804,16 +1818,20 @@ void XLS_CELL_SET_FONT_NAME(sLONG_PTR *pResult, PackagePtr pParams)
 	
 	if(c){
 		
-		CUTF8String s;
-		Param2.copyUTF8String(&s);
+        std::string name;
 		
-		std::string name = std::string((char *)s.c_str());
-		
-	//	if(CGlobalRecords::IsASCII(name)){
-		
+        convertFontName(Param2, name);
+        
+		if(CGlobalRecords::IsASCII(name)){
+
+            worksheet *w = c->GetWorksheet();
+            if(w) {
+             
+            }
+            
 			c->fontname(name);
 			
-	//	}
+		}
 		
 	}	
 
@@ -2160,16 +2178,16 @@ void XLS_RANGE_SET_FONT_NAME(sLONG_PTR *pResult, PackagePtr pParams)
 	range *r = _rangeGet(Param1);
 	
 	if(r){
-	
-		CUTF8String s;
-		Param2.copyUTF8String(&s);
-		std::string name = std::string((char *)s.c_str());	
+        
+        std::string name;
+        
+        convertFontName(Param2, name);
 		
-	//	if(CGlobalRecords::IsASCII(name)){
+		if(CGlobalRecords::IsASCII(name)){
 		
 			r->fontname(name);
 			
-	//	}
+		}
 
 	}
 
@@ -2368,17 +2386,16 @@ void XLS_FONT_SET_NAME(sLONG_PTR *pResult, PackagePtr pParams)
 	font_t *f = _fontGet(Param1);
 	
 	if(f){
+        
+		std::string name;
 		
-		CUTF8String s;
-		Param2.copyUTF8String(&s);
-		
-		std::string name = std::string((char *)s.c_str());	
-		
-	//	if(CGlobalRecords::IsASCII(name)){
+        convertFontName(Param2, name);
+        
+		if(CGlobalRecords::IsASCII(name)){
 		
 			f->SetName(name);	
 			
-	//	}
+		}
 		
 	}	
 

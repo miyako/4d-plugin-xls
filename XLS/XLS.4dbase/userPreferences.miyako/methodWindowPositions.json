@@ -1,0 +1,32 @@
+﻿{
+	"Sources/Methods/Unicode_sample.4dm": {
+		"left": 140,
+		"top": 134,
+		"width": 782,
+		"height": 631
+	},
+	"Sources/Methods/Method2.4dm": {
+		"left": 543,
+		"top": 103,
+		"width": 807,
+		"height": 694
+	},
+	"Sources/Methods/Method3.4dm": {
+		"left": 757,
+		"top": 120,
+		"width": 807,
+		"height": 694
+	},
+	"Sources/Methods/Method4.4dm": {
+		"left": 370,
+		"top": 359,
+		"width": 1023,
+		"height": 755
+	},
+	"Sources/Methods/Method5.4dm": {
+		"left": 403,
+		"top": 499,
+		"width": 1023,
+		"height": 755
+	}
+}

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
+<base name="" uuid="30F20A15D5558348BD9812A1C6C8C23A" collation_locale="fr">
+	<schema name="DEFAULT_SCHEMA"/>
+	<base_extra data_file_path=":XLS.4DD" package_name="XLS" structure_file_name="XLS" __stringCompHash="icu:63.1.0" __keywordBuildingHash="icu:63.1.0"/>
+</base>
