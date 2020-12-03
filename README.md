@@ -77,3 +77,8 @@ XLS WORKBOOK CLEAR ($book)
 ## Discussions
 
 https://forums.4d.com/Post//28120080/1/
+
+## 日本語特有の制限
+
+日本語のフォント名は指定できないようです。たとえば`ＭＳ Ｐゴシック`は`MS PGothic`と指定しなければなりません。
+
