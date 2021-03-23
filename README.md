@@ -20,6 +20,10 @@ For reading cell values, you might want to consider [this](https://github.com/mi
 -mmacosx-version-min=10.9
 ```
 
+### Build notes
+
+suppress `configure` error "cannot run test program while cross compiling"
+
 * Library solution for Windows
 
 https://github.com/miyako/msvc-xlslib
