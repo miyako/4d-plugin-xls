@@ -1,19 +1,19 @@
 ﻿{
 	"methods": {
 		"Unicode_sample": {
-			"timeStamp": "2020-12-03T05:13:55.802Z"
+			"timeStamp": "2020-12-03T05:13:55.000Z"
 		},
 		"Method3": {
-			"timeStamp": "2020-12-03T05:13:55.804Z"
+			"timeStamp": "2020-12-03T05:13:55.000Z"
 		},
 		"Method2": {
-			"timeStamp": "2020-12-03T05:13:55.803Z"
+			"timeStamp": "2020-12-03T05:13:55.000Z"
 		},
 		"Method5": {
-			"timeStamp": "2020-12-03T05:13:55.804Z"
+			"timeStamp": "2020-12-03T05:13:55.000Z"
 		},
 		"Method4": {
-			"timeStamp": "2020-12-03T05:13:55.804Z"
+			"timeStamp": "2020-12-03T05:13:55.000Z"
 		}
 	}
 }

@@ -1,7 +1,13 @@
-﻿<?xml version="1.0" encoding="UTF-8"?><preferences stamp="3">
+﻿<?xml version="1.0" encoding="UTF-8"?><preferences stamp="5">
 	<com.4d>
 		<database>
 			<data_storage data_path="XLS.4DD"/>
 		</database>
+		<general last_opening_mode="0"/>
 	</com.4d>
+	<internal_prefs_4d>
+		<windows>
+			<window name="main" left="40" top="143" width="600" height="450"/>
+		</windows>
+	</internal_prefs_4d>
 </preferences>
