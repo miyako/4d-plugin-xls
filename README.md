@@ -12,8 +12,6 @@
 
 For reading cell values, you might want to consider [this](https://github.com/miyako/4d-plugin-free-xl).
 
-```
-
 ### Build notes
 
 suppress `configure` error "cannot run test program while cross compiling"
