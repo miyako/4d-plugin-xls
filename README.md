@@ -12,14 +12,6 @@
 
 For reading cell values, you might want to consider [this](https://github.com/miyako/4d-plugin-free-xl).
 
-### Library Information
-
-* Notable build flags on Mac
-
-```
--stdlib=libc++
--isysroot MacOSX10.9.sdk
--mmacosx-version-min=10.9
 ```
 
 ### Build notes
@@ -38,7 +30,7 @@ https://github.com/miyako/msvc-iconv
 
 * Adding a SUM() function cell
 
-```
+```4d
 $text:=Unicode_sample 
 
   //create a workbook
